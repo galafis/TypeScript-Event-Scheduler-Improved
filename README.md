@@ -1,6 +1,11 @@
 # TypeScript Event Scheduler
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/galafis/TypeScript-Event-Scheduler-Improved/main.yml?branch=main) ![License](https://img.shields.io/github/license/galafis/TypeScript-Event-Scheduler-Improved) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![License](https://img.shields.io/github/license/galafis/TypeScript-Event-Scheduler-Improved) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+<!-- Placeholder for Hero Image -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x400?text=TypeScript+Event+Scheduler+Hero+Image" alt="TypeScript Event Scheduler Hero Image Placeholder">
+</p>
 
 Um agendador de eventos robusto e flexível desenvolvido em TypeScript, projetado para gerenciar compromissos e tarefas de forma eficiente. Este projeto demonstra boas práticas de desenvolvimento, incluindo uma estrutura de código organizada, testes unitários abrangentes e documentação clara.
 
@@ -88,6 +93,13 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICEN
 # English Version
 
 ## TypeScript Event Scheduler
+
+![License](https://img.shields.io/github/license/galafis/TypeScript-Event-Scheduler-Improved) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+<!-- Placeholder for Hero Image -->
+<p align="center">
+  <img src="https://via.placeholder.com/800x400?text=TypeScript+Event+Scheduler+Hero+Image" alt="TypeScript Event Scheduler Hero Image Placeholder">
+</p>
 
 A robust and flexible event scheduler developed in TypeScript, designed to efficiently manage appointments and tasks. This project demonstrates good development practices, including an organized code structure, comprehensive unit tests, and clear documentation.
 
