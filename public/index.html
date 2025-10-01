@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Event Scheduler Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TypeScript Event Scheduler Demo</h1>
+        <div class="event-form">
+            <h2>Add New Event</h2>
+            <input type="text" id="eventId" placeholder="Event ID">
+            <input type="text" id="eventName" placeholder="Event Name">
+            <input type="date" id="eventDate">
+            <input type="text" id="eventDescription" placeholder="Description (optional)">
+            <button id="addEventBtn">Add Event</button>
+        </div>
+        <div class="event-list">
+            <h2>All Events</h2>
+            <ul id="eventsList"></ul>
+        </div>
+        <div class="filter-by-date">
+            <h2>Filter Events by Date</h2>
+            <input type="date" id="filterDate">
+            <button id="filterEventsBtn">Filter</button>
+            <ul id="filteredEventsList"></ul>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
