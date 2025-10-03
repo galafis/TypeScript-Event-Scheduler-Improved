@@ -8,15 +8,17 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npx tsc",
+    "deploy": "npm run build && cp public/index.html docs/index.html && cp public/style.css docs/style.css && cp -r dist docs/dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/galafis/TypeScript-Event-Scheduler-Improved.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Gabriel Demetrios Lafis",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/galafis/TypeScript-Event-Scheduler-Improved/issues"
   },
@@ -28,3 +30,4 @@
     "typescript": "^5.9.3"
   }
 }
+
