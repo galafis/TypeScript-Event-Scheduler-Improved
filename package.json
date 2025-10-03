@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Este é um agendador de eventos em TypeScript para gerenciamento de compromissos e tarefas.",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs",
     "test": "tests"
@@ -10,6 +11,9 @@
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"*.js\" \"*.json\" \"*.md\"",
     "deploy": "npm run build && cp public/index.html docs/index.html && cp public/style.css docs/style.css && cp -r dist docs/dist"
   },
   "repository": {
@@ -24,10 +28,17 @@
   },
   "homepage": "https://github.com/galafis/TypeScript-Event-Scheduler-Improved#readme",
   "devDependencies": {
+    "@eslint/js": "^9.37.0",
     "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
     "jest": "^30.2.0",
+    "prettier": "^3.6.2",
     "ts-jest": "^29.4.4",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0"
   }
 }
 
