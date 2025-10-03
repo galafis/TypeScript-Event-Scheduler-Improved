@@ -2,10 +2,13 @@
 
 ![License](https://img.shields.io/github/license/galafis/TypeScript-Event-Scheduler-Improved) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-<!-- Placeholder for Hero Image -->
-<p align="center">
-  <img src="https://via.placeholder.com/800x400?text=TypeScript+Event+Scheduler+Hero+Image" alt="TypeScript Event Scheduler Hero Image Placeholder">
-</p>
+## 🖼️ Imagem Hero / Hero Image
+
+Uma representação visual do sistema de agendamento de eventos em ação, destacando a interface moderna e funcionalidades avançadas.
+
+A visual representation of the event scheduling system in action, highlighting the modern interface and advanced features.
+
+![Hero Image](docs/hero-image.png)
 
 Um agendador de eventos robusto e flexível desenvolvido em TypeScript, projetado para gerenciar compromissos e tarefas de forma eficiente. Este projeto demonstra boas práticas de desenvolvimento, incluindo uma estrutura de código organizada, testes unitários abrangentes e documentação clara.
 
@@ -96,10 +99,13 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICEN
 
 ![License](https://img.shields.io/github/license/galafis/TypeScript-Event-Scheduler-Improved) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-<!-- Placeholder for Hero Image -->
-<p align="center">
-  <img src="https://via.placeholder.com/800x400?text=TypeScript+Event+Scheduler+Hero+Image" alt="TypeScript Event Scheduler Hero Image Placeholder">
-</p>
+## 🖼️ Imagem Hero / Hero Image
+
+Uma representação visual do sistema de agendamento de eventos em ação, destacando a interface moderna e funcionalidades avançadas.
+
+A visual representation of the event scheduling system in action, highlighting the modern interface and advanced features.
+
+![Hero Image](docs/hero-image.png)
 
 A robust and flexible event scheduler developed in TypeScript, designed to efficiently manage appointments and tasks. This project demonstrates good development practices, including an organized code structure, comprehensive unit tests, and clear documentation.
 
