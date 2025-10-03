@@ -1,4 +1,4 @@
-import EventScheduler from '../dist/EventScheduler.js';
+import EventScheduler from './EventScheduler.js';
 
 const scheduler = new EventScheduler();
 
