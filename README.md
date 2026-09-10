@@ -1,5 +1,7 @@
 # TypeScript Event Scheduler
 
+[Open interactive example / Abrir exemplo interativo](https://galafis.github.io/TypeScript-Event-Scheduler-Improved/)
+
 ### Agendador de Eventos em TypeScript
 
 [![Validation](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml)
