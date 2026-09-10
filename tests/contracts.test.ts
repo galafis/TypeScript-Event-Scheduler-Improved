@@ -1,5 +1,54 @@
 import EventScheduler from "../src/EventScheduler";
 describe("Schedule contracts", () => {
+  test("impossible calendar dates cannot silently roll into another month", () => {
+    const s = new EventScheduler();
+    s.addEvent({
+      id: "existing",
+      name: "Keep",
+      date: new Date("2026-01-01T00:00:00Z"),
+    });
+    const before = s.toJSON();
+    for (const date of [
+      "2026-02-30T12:00:00Z",
+      "2026-02-29T00:00:00Z",
+      "2100-02-29T00:00:00Z",
+      "2026-04-31T00:00:00Z",
+      "2026-01-01T24:00:00Z",
+      "2026-01-01T12:00:00+03:99",
+    ]) {
+      expect(() =>
+        s.importJSON(JSON.stringify([{ id: "new", name: "Invalid", date }])),
+      ).toThrow();
+      expect(s.toJSON()).toBe(before);
+    }
+  });
+  test("leap dates and fractional seconds preserve their instant", () => {
+    const s = new EventScheduler();
+    s.importJSON(
+      '[{"id":"a","name":"Leap","date":"2000-02-29T23:59:59.12-03:00"}]',
+    );
+    expect(s.getEvent("a")!.date.toISOString()).toBe(
+      "2000-03-01T02:59:59.120Z",
+    );
+  });
+  test("unexpected JSON fields are rejected", () => {
+    const s = new EventScheduler();
+    expect(() =>
+      s.importJSON(
+        '[{"id":"a","name":"Extra","date":"2026-01-01T00:00:00Z","unknown":true}]',
+      ),
+    ).toThrow();
+  });
+  test("every accepted Date can roundtrip through the four-digit-year JSON contract", () => {
+    const s = new EventScheduler();
+    expect(
+      s.addEvent({
+        id: "future",
+        name: "Too far",
+        date: new Date("+010000-01-01T00:00:00Z"),
+      }),
+    ).toBe(false);
+  });
   test("defensive copies protect stored dates", () => {
     const s = new EventScheduler();
     const event = {

@@ -115,3 +115,9 @@ PT: Ao alterar comportamento, atualize em conjunto o contrato, o exemplo e um te
 Author / Autor: [Gabriel Demetrios Lafis](https://github.com/galafis) · [Institutional contact / Contato institucional](mailto:gabrieldemetrioslafis@usp.br)
 
 License / Licença: [repository license](LICENSE).
+
+## Additional contract checks · Verificações adicionais de contrato
+
+JSON import rejects impossible calendar dates, invalid time components and unknown fields before replacing existing events. Leap years, fractional seconds and explicit UTC offsets are checked; accepted dates use four-digit UTC years (0000–9999).
+
+A importação JSON rejeita datas impossíveis, componentes de horário inválidos e campos desconhecidos antes de substituir eventos. Anos bissextos, frações de segundo e fusos explícitos são verificados; datas aceitas usam anos UTC de quatro dígitos (0000–9999).

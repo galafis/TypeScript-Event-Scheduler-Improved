@@ -34,6 +34,12 @@ PT: Datas do formulário são UTC, não hora local. Não há sincronização de 
 
 ## Verified suite / Suíte verificada
 
-**15 software tests passed / testes de software aprovados.**
+**19 software tests passed / testes de software aprovados.**
 
 README Mermaid syntax and local documentation links were checked. / A sintaxe Mermaid do README e os links locais da documentação foram conferidos.
+
+## Additional contract checks · Verificações adicionais de contrato
+
+JSON import rejects impossible calendar dates, invalid time components and unknown fields before replacing existing events. Leap years, fractional seconds and explicit UTC offsets are checked; accepted dates use four-digit UTC years (0000–9999).
+
+A importação JSON rejeita datas impossíveis, componentes de horário inválidos e campos desconhecidos antes de substituir eventos. Anos bissextos, frações de segundo e fusos explícitos são verificados; datas aceitas usam anos UTC de quatro dígitos (0000–9999).
