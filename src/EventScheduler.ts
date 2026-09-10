@@ -124,7 +124,7 @@ export default class EventScheduler {
         !record ||
         typeof record !== "object" ||
         Object.keys(record).some(
-          (key) => !["id", "name", "date", "description"].includes(key),
+          (key) => !new Set(["id", "name", "date", "description"]).has(key),
         ) ||
         !next.addEvent({ ...record, date: this.parseTimestamp(record.date) })
       ) {
