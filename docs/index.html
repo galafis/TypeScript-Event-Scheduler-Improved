@@ -1,33 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TypeScript Event Scheduler Demo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>TypeScript Event Scheduler Demo</h1>
-        <div class="event-form">
-            <h2>Add New Event</h2>
-            <input type="text" id="eventId" placeholder="Event ID">
-            <input type="text" id="eventName" placeholder="Event Name">
-            <input type="date" id="eventDate">
-            <input type="text" id="eventDescription" placeholder="Description (optional)">
-            <button id="addEventBtn">Add Event</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Event Scheduler · TypeScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <span class="eyebrow">TypeScript · browser workspace</span>
+          <h1
+            data-en="Make room for what matters."
+            data-pt="Organize o que importa."
+          ></h1>
+          <p
+            data-en="A small, complete scheduler with UTC dates, JSON export and local storage."
+            data-pt="Um agendador completo com datas UTC, exportação JSON e armazenamento local."
+          ></p>
         </div>
-        <div class="event-list">
-            <h2>All Events</h2>
-            <ul id="eventsList"></ul>
-        </div>
-        <div class="filter-by-date">
-            <h2>Filter Events by Date</h2>
-            <input type="date" id="filterDate">
-            <button id="filterEventsBtn">Filter</button>
-            <ul id="filteredEventsList"></ul>
-        </div>
-    </div>
+        <button id="language" class="secondary">Português</button>
+      </header>
+      <div class="grid">
+        <section class="card">
+          <h2 data-en="Schedule an event" data-pt="Agendar um evento"></h2>
+          <form id="form">
+            <label
+              ><span data-en="Title" data-pt="Título"></span
+              ><input name="name" required maxlength="120" /></label
+            ><label
+              ><span
+                data-en="Date and time · UTC"
+                data-pt="Data e hora · UTC"
+              ></span
+              ><input type="datetime-local" name="date" required /></label
+            ><label
+              ><span data-en="Description" data-pt="Descrição"></span
+              ><input name="description" maxlength="500" /></label
+            ><button data-en="Add event" data-pt="Adicionar evento"></button>
+          </form>
+          <p id="message" role="status"></p>
+          <button
+            id="export"
+            class="secondary"
+            data-en="Export JSON"
+            data-pt="Exportar JSON"
+          ></button
+          ><label
+            ><span
+              data-en="Import JSON (replaces schedule)"
+              data-pt="Importar JSON (substitui a agenda)"
+            ></span
+            ><input id="import" type="file" accept="application/json,.json"
+          /></label>
+        </section>
+        <section class="card">
+          <h2 data-en="Your schedule" data-pt="Sua agenda"></h2>
+          <label
+            ><span
+              data-en="Filter by UTC day"
+              data-pt="Filtrar por dia UTC"
+            ></span
+            ><input id="filter" type="date"
+          /></label>
+          <div id="list"></div>
+        </section>
+      </div>
+      <footer>
+        <p
+          data-en="Stored only in this browser. Export a backup before clearing browser data. No external calendar or notification service is connected."
+          data-pt="Armazenamento apenas neste navegador. Exporte uma cópia antes de limpar os dados. Nenhum calendário externo ou serviço de notificações está conectado."
+        ></p>
+        <a href="https://github.com/galafis/TypeScript-Event-Scheduler-Improved"
+          >GitHub · EN / PT</a
+        >
+      </footer>
+    </main>
     <script type="module" src="script.js"></script>
-</body>
+  </body>
 </html>

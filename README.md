@@ -1,271 +1,115 @@
-# 🚀 Typescript Event Scheduler Improved
+# TypeScript Event Scheduler
 
-> Um agendador de eventos em TypeScript para gerenciamento de compromissos e tarefas. Repositório aprimorado por Gabriel Demetrios Lafis.
+### Agendador de Eventos em TypeScript
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
-![License-MIT](https://img.shields.io/badge/License--MIT-yellow?style=for-the-badge)
+[![Validation](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml)
+[English](#english) · [Português](#portugues) · [Examples / Exemplos](examples/demo.mjs) · [Validation / Validação](docs/VALIDATION.md)
 
+**TypeScript and interfaces / TypeScript e interfaces** · Working prototype / Protótipo funcional · Gabriel Demetrios Lafis
 
-[English](#english) | [Português](#português)
-
----
+<a id="english"></a>
 
 ## English
 
-### 🎯 Overview
+A typed scheduling library with a complete bilingual browser interface, UTC day filtering and portable JSON import and export.
 
-**Typescript Event Scheduler Improved** is a production-grade JavaScript application complemented by CSS, HTML, Python, TypeScript that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
+### What works
 
-The codebase comprises **235 lines** of source code organized across **6 modules**, following industry best practices for maintainability, scalability, and code quality.
+- Create, update, delete and sort events; duplicate identifiers are rejected.
+- Defensive Date copies protect stored events from mutation by callers.
+- JSON import validates the entire schedule before replacing it; browser storage keeps the local agenda.
 
-### ✨ Key Features
+### Reproducible walkthrough
 
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
+Requirements: Node.js 24+ and pnpm 11 / Node.js 24+ e pnpm 11.
 
-### 🏗️ Architecture
+Run from the repository root. The validation environment installs the components exercised by the tests and documented example; optional integrations may need their separate dependencies.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm test
+pnpm build
+```
+
+**Input contract / Contrato de entrada:** `{id, name, date: Date, description?}`; JSON dates require an explicit timezone / datas JSON exigem fuso explícito.
+
+**Expected behavior / Comportamento esperado:** The example adds one design-review event at 2026-10-01T14:00:00Z and verifies it belongs to that UTC day. / O exemplo adiciona uma revisão de projeto em 2026-10-01T14:00:00Z e verifica o dia UTC correspondente.
+
+### Architecture / Arquitetura
 
 ```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+flowchart LR
+    A["Browser form / Formulário"]
+    B["Typed schedule / Agenda tipada"]
+    C["Validated UTC events / Eventos UTC validados"]
+    D["Local storage and JSON / Armazenamento local e JSON"]
+    A --> B --> C --> D
 ```
 
-### 🚀 Quick Start
+The main path can be followed in [src/EventScheduler.ts](src/EventScheduler.ts). Examples call the actual implementation and include assertions; they are not pseudocode.
 
-#### Prerequisites
+### Scope and assumptions
 
-- Node.js 20+
-- npm or yarn
+Dates in the browser form are UTC, not local time. No calendar synchronization, reminders, collaboration server or recurring-event engine is included. Browser storage can be cleared; export backups when needed.
 
-#### Installation
+### Changes verified in this review
 
-```bash
-# Clone the repository
-git clone https://github.com/galafis/TypeScript-Event-Scheduler-Improved.git
-cd TypeScript-Event-Scheduler-Improved
+Restored the missing scheduling implementation and browser module; repaired the build; added immutable reads, UTC boundary tests and atomic JSON import.
 
-# Install dependencies
-npm install
-```
-
-#### Running
-
-```bash
-# Development mode
-npm run dev
-
-# Production build
-npm run build
-npm start
-```
-
-### 🧪 Testing
-
-```bash
-# Run all tests
-npm test
-
-# Run with coverage
-npm run test:coverage
-
-# Run in watch mode
-npm run test:watch
-```
-
-### 📁 Project Structure
-
-```
-TypeScript-Event-Scheduler-Improved/
-├── docs/          # Documentation
-├── tests/         # Test suite
-│   └── EventScheduler.test.ts
-├── LICENSE
-├── README.md
-├── eslint.config.js
-├── extract_mermaid.py
-├── jest.config.js
-├── package-lock.json
-├── package.json
-└── tsconfig.json
-```
-
-### 🛠️ Tech Stack
-
-| Technology | Description | Role |
-|------------|-------------|------|
-| **JavaScript** | Core Language | Primary |
-| Python | 1 files | Supporting |
-| HTML | 1 files | Supporting |
-| CSS | 1 files | Supporting |
-| TypeScript | 1 files | Supporting |
-
-### 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 👤 Author
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
-
----
+<a id="portugues"></a>
 
 ## Português
 
-### 🎯 Visão Geral
+Biblioteca tipada de agendamento com interface bilíngue completa, filtros por dia UTC e importação e exportação JSON.
 
-**Typescript Event Scheduler Improved** é uma aplicação JavaScript de nível profissional, complementada por CSS, HTML, Python, TypeScript que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
+### Funcionalidades disponíveis
 
-A base de código compreende **235 linhas** de código-fonte organizadas em **6 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
+- Crie, altere, exclua e ordene eventos; identificadores duplicados são rejeitados.
+- Cópias defensivas de Date protegem eventos contra alterações feitas por quem usa a biblioteca.
+- A importação JSON valida toda a agenda antes de substituí-la; o armazenamento do navegador preserva a agenda local.
 
-### ✨ Funcionalidades Principais
+### Execução reproduzível
 
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
+Use os comandos da seção acima a partir da raiz do repositório. Requisitos: Node.js 24+ and pnpm 11 / Node.js 24+ e pnpm 11. O ambiente de validação instala os componentes exercitados pelos testes e pelo exemplo documentado; integrações opcionais podem exigir dependências próprias.
 
-### 🏗️ Arquitetura
+O fluxo principal está em [src/EventScheduler.ts](src/EventScheduler.ts). Os exemplos usam a implementação real e verificam resultados com asserções; não são pseudocódigo. O diagrama apresenta os mesmos passos nos dois idiomas.
 
-```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+### Escopo e premissas
+
+Datas do formulário são UTC, não hora local. Não há sincronização de calendário, lembretes, servidor colaborativo ou eventos recorrentes. O armazenamento do navegador pode ser apagado; exporte cópias quando necessário.
+
+### Melhorias verificadas nesta revisão
+
+Restaurados implementação de agendamento e módulo do navegador; corrigida compilação; adicionados leitura protegida, testes de limites UTC e importação JSON atômica.
+
+### Run the application / Executar a aplicação
+
+```sh
+python -m http.server 8080 --directory docs
 ```
 
-### 🚀 Início Rápido
-
-#### Prerequisites
-
-- Node.js 20+
-- npm or yarn
-
-#### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/galafis/TypeScript-Event-Scheduler-Improved.git
-cd TypeScript-Event-Scheduler-Improved
-
-# Install dependencies
-npm install
+```sh
+node examples/demo.mjs
 ```
 
-#### Running
+Open / Abra: http://localhost:8080.
 
-```bash
-# Development mode
-npm run dev
+## Repository guide / Guia do repositório
 
-# Production build
-npm run build
-npm start
-```
+| Location / Local                                            | Purpose / Finalidade                                                   |
+| ----------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [Implementation / Implementação](src/EventScheduler.ts)     | Main domain behavior / Comportamento principal do domínio              |
+| [Example / Exemplo](examples/demo.mjs)                      | Executable scenario / Cenário executável                               |
+| [Tests / Testes](tests/)                                    | Normal behavior and failure cases / Fluxos válidos e casos de falha    |
+| [Validation notes / Notas de validação](docs/VALIDATION.md) | Corrections, evidence and boundaries / Correções, evidências e limites |
+| [Workflow / Automação](.github/workflows/ci.yml)            | Automated checks / Verificações automatizadas                          |
 
-### 🧪 Testing
+## Development / Desenvolvimento
 
-```bash
-# Run all tests
-npm test
+EN: When changing behavior, update the contract, the worked example and a regression test together. Keep synthetic fixtures separate from real data. A passing test suite demonstrates the listed software behaviors; it does not certify a deployment or domain outcome.
 
-# Run with coverage
-npm run test:coverage
+PT: Ao alterar comportamento, atualize em conjunto o contrato, o exemplo e um teste de regressão. Separe amostras fictícias de dados reais. Testes aprovados demonstram os comportamentos de software listados; não certificam implantação nem resultado no domínio.
 
-# Run in watch mode
-npm run test:watch
-```
+Author / Autor: [Gabriel Demetrios Lafis](https://github.com/galafis) · [Institutional contact / Contato institucional](mailto:gabrieldemetrioslafis@usp.br)
 
-### 📁 Estrutura do Projeto
-
-```
-TypeScript-Event-Scheduler-Improved/
-├── docs/          # Documentation
-├── tests/         # Test suite
-│   └── EventScheduler.test.ts
-├── LICENSE
-├── README.md
-├── eslint.config.js
-├── extract_mermaid.py
-├── jest.config.js
-├── package-lock.json
-├── package.json
-└── tsconfig.json
-```
-
-### 🛠️ Stack Tecnológica
-
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **JavaScript** | Core Language | Primary |
-| Python | 1 files | Supporting |
-| HTML | 1 files | Supporting |
-| CSS | 1 files | Supporting |
-| TypeScript | 1 files | Supporting |
-
-### 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
-### 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### 👤 Autor
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
+License / Licença: [repository license](LICENSE).

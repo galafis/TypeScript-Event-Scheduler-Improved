@@ -6,7 +6,7 @@ import prettierConfig from "eslint-config-prettier";
 export default [
   {
     languageOptions: {
-      globals: globals.browser,
+      globals: { ...globals.browser, ...globals.jest },
     },
   },
   pluginJs.configs.recommended,
@@ -19,4 +19,3 @@ export default [
     },
   },
 ];
-
