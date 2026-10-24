@@ -1,13 +1,29 @@
 # TypeScript Event Scheduler
 
-[Open interactive example / Abrir exemplo interativo](https://galafis.github.io/TypeScript-Event-Scheduler-Improved/)
+**Typed applications · Aplicações tipadas**
 
-### Agendador de Eventos em TypeScript
+<p align="center"><img src="assets/project-overview.svg" width="960" alt="Workflow illustration: UTC events → Typed operations → Portable JSON"></p>
 
-[![Validation](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml)
-[English](#english) · [Português](#portugues) · [Examples / Exemplos](examples/demo.mjs) · [Validation / Validação](docs/VALIDATION.md)
+[![Checks](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml)
+[English](#english) · [Português](#portugues) · [Guided tour / Visita guiada](docs/SHOWCASE.md) · [Validation / Validação](docs/VALIDATION.md)
 
-**TypeScript and interfaces / TypeScript e interfaces** · Working prototype / Protótipo funcional · Gabriel Demetrios Lafis
+> **EN:** Does an event remain on the intended UTC day after JSON exchange?<br>
+> **PT:** Um evento continua no dia UTC esperado após a troca por JSON?
+
+## Start here · Comece aqui
+
+| Goal · Objetivo | Where to go · Por onde começar |
+| --- | --- |
+| Understand a real example · Entender um exemplo concreto | [Walkthrough / Roteiro](examples/demo.mjs) |
+| Reproduce and compare · Reproduzir e comparar | [Evidence tour / Visita às evidências](docs/SHOWCASE.md) |
+| Inspect the checks · Inspecionar as verificações | [Validation record / Registro de validação](docs/VALIDATION.md) · [CI](https://github.com/galafis/TypeScript-Event-Scheduler-Improved/actions/workflows/ci.yml) |
+| Explore in the browser · Explorar no navegador | [Public demonstration / Demonstração pública](https://galafis.github.io/TypeScript-Event-Scheduler-Improved/) |
+
+**Example result · Resultado do exemplo:** The example adds one design-review event at 2026-10-01T14:00:00Z and verifies it belongs to that UTC day. / O exemplo adiciona uma revisão de projeto em 2026-10-01T14:00:00Z e verifica o dia UTC correspondente.
+
+**Try a comparison · Experimente uma comparação**<br>
+**EN:** Export the design-review event, import it again and inspect UTC day filtering and duplicate-ID rejection.<br>
+**PT:** Exporte o evento de revisão, importe novamente e inspecione o filtro de dia UTC e a rejeição de IDs duplicados.
 
 <a id="english"></a>
 
